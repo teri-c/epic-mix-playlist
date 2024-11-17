@@ -1,15 +1,15 @@
 const epicMix = [
-  "Time to Pretend",
-  "O-o-oh Child",
-  "Wish You Were Here",
-  "Heroes",
+  "Somebody That I Used To Know",
+  "Too Cool To Be Careless",
+  "New Person, Same Old Mistakes",
+  "Rapture",
   "I Put a Spell on You",
   "Call Me",
-  "Paper Planes",
+  "Ray Of Solar",
   "Jolene",
   "You Don't Own Me",
   "Fast Car",
-  "Run the World (Girls)",
+  "Dinner & Diatribes",
   "Superstition"
 ];
 
@@ -20,4 +20,16 @@ const total = document.querySelector(".total");
 button.addEventListener("click", function () {
   mixList.classList.remove("hide");
   button.classList.add("hide");
+  mixInfo(epicMix);
 });
+
+total.innerText = `${epicMix.length} great songs!`;
+
+const mixInfo = function (mix) {
+  epicMix.forEach(function (song, index) {
+    const li = document.createElement("li");
+    li.classList.add("song");
+    li.innerHTML = `<span class="song-number">#${index + 1}</span> ${song}`;
+    mixList.append(li);
+  });
+};
